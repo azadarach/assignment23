@@ -15,31 +15,31 @@
 }
 
 body{
-  background-color: var(--col-01);
-  color: var(--col-02);
-  padding: 2vw;
+  background-color: var(--col-01); /* The background of the webpage is dark */
+  color: var(--col-02); /* The writing is an off-white colour */
+  padding: 2vw; /* There is padding between the boxes and the outer edge of the webpage */
 }
 
 a {
-  color: var(--col-04);
-  text-decoration: none;
+  color: var(--col-04); /* The links and licences are green */ 
+  text-decoration: none; /* This gets rid of the underline */
 }
 a:hover {
-  color: var(--col-03);
-  text-decoration: underline;
+  color: var(--col-03); /* When the links are hovered over they turn purple */
+  text-decoration: underline; /* When the links are hovered over they have an underline */
 }
 
 hr {
-  margin-bottom: 2vh;
+  margin-bottom: 2vh; /* creates a bottom margin for anything in the hr tag*/
 }
 
 #list-filter-wrapper{
-  display: flex;
-  flex-direction: column;
+  display: flex; /* The filter items display is set to flex which means it can change proportions */
+  flex-direction: column; 
 }
 
 .FilterCategoryWrapper{
-  display: flex;
+  display: flex; 
   padding: 15px;
 }
 
@@ -50,17 +50,17 @@ summary {
 }
 
 .FilterSelector {
-  font-size: 2rem;
-  background-color: transparent;
-  color: var(--col-02);
-  border: none;
-  cursor: pointer;
+  font-size: 2rem; /* The filter titles are 2rem bigger than the set font size*/
+  background-color: transparent; 
+  color: var(--col-02); /* They're white */
+  border: none; /* The is no border for the filters at the top */
+  cursor: pointer; /* The cursor turns into a hand when you hover over the filters */
   text-align: center;
   width: 100%;
 }
 .FilterSelector:hover {
-  color: var(--col-03);
-}
+  color: var(--col-03); 
+}  /* When you hover and click on a filter it turns purple */
 .FilterSelector:active {
   color: var(--col-03);
 }
@@ -71,16 +71,16 @@ summary {
 
 
 #recipe-list-wrapper{
-  display: flex;
-  gap: 1rem;
+  display: flex; /* The lists can change based on the size of the browser */
+  gap: 2rem;
   flex-wrap: wrap;
 }
 .RecipeCardWrapper{
-  min-height: 40rem;
-  padding: 2.2rem;
-  border: solid var(--col-02) 2px;
+  min-height: 40rem; /* min-height is used instead of heightn so it can look beter on Google Chrome */
+  padding: 2.2rem; /* This is the padding between the pictures and the box/border. */ 
+  border: solid var(--col-02) 2px; /* The border is off-white and 2px thick */
   flex-grow: 1;
-  display: flex;
+  display: flex; 
   flex-direction: column;
 }
 /* .RecipeCardWrapper:hover{
@@ -89,22 +89,22 @@ summary {
 } */
 .RecipeImg{
   object-fit: cover;
-  width: 100%;
+  width: 100%; /* The image size in the browser is 100% of the default image size*/
   height: 100%;
 }
 .RecipeTitle{
-  font-size: 2rem;
+  font-size: 2rem; /* 2rem is bigger than the regular body text */
 }
 .RecipeAuthor{
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* 1.5rem is slightly smaller than 2rem */
 }
 
 
-/* for screens over 768px wide */
+/* for screens over 768px wide. chnages the website a little when it is being viewed on a larger screen */
 @media all and (min-width: 768px) {
   
   hr {
-    margin-bottom: 2vw;
+    margin-bottom: 2vw; 
   }
 
   #list-filter-wrapper{

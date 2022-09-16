@@ -1,30 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Document type is a HTML file -->
 
-<html lang="en">
+<html lang="en"> <!-- Language is English -->
 
   <head>
 
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Connects HTML file to CSS file -->
 
-    <script src="arrays-&-for-loops.js"></script>
+    <script src="arrays-&-for-loops.js"></script> <!-- Connects the HTML file to the arrays and for loops javascript file. -->
 
-    <script src="filter.js"></script>
+    <script src="filter.js"></script> <!-- Connects HTML to the Javascript Filter file-->
 
-    <title>exercise 3</title>
+    <title>exercise 3</title> <!-- What the website is called on the tab -->
 
   </head>
 
   <body>
 
-    <h1>Interactive Media 1 Recipe List</h1>
+    <h1>Interactive Media 1 Recipe List</h1> <!-- Main title at the top of the page -->
 
     <hr />
 
-    <h2>Filter by:</h2>
+    <h2>Filter by:</h2> <!-- Heading after title -->
 
-    <div id="list-filter-wrapper">     
+    <div id="list-filter-wrapper">  <!-- ID connects CSS styling to the Filter section specifically -->  
 
       <!-- I'm having quite a bit of trouble gettig this section to work. It seems to only be working for me in certain circumstances, ut when I chnage the ID names and add a filter function is Java, it all seems to stop working. I would love to have asked for help on this if I had given myself some time, but unfortunately I will have tp leave the code like this.-->
 
@@ -36,6 +36,8 @@
         <button class="FilterSelector" id="clm-author" onclick='filterCategory("author", "CLM")'>Carla Lalli Music</button>
       </details> 
       <!-- FilterSelector refers to the css that has been written that sets out how the categories look on the website. -->
+      <!-- onclick means when the specific filter is clicked, it should show every recipe (and only those recipes) with that filter on the page -->
+      <!-- The filters are all inside a button tag that have a title (the white writing is what shows up on the webpage) -->
 
       <details class="FilterCategoryWrapper">
         <summary>Dietary Requirements</summary>
@@ -43,8 +45,9 @@
         <button class="FilterSelector" id="vegan-veg" onclick='filterCategory("veg", "VEGAN")'>Vegan</button>
         <button class="FilterSelector" id="gf-veg" onclick='filterCategory("veg", "GF")'>Gluten Free</button>
         <button class="FilterSelector" id="df-veg" onclick='filterCategory("veg", "DF")'>Dairy Free</button>
-        <button class="FilterSelector" id="pf-veg" onclick='filterCategory("veg", "PF")'>Peanut Free</button>
+        <button class="FilterSelector" id="nf-veg" onclick='filterCategory("veg", "NF")'>Nut Free</button>
       </details>
+      <!-- I attempted to create new filter categories to create a functional website with appropriate filters, so I created dietary requirements, time to cook and cuisine. -->
 
       <details class="FilterCategoryWrapper">
         <summary>Time to Cook</summary>
@@ -61,6 +64,7 @@
         <button class="FilterSelector" id="kor-cuisine" onclick='filterCategory("cuisine", "KOR")'>Korean</button>
         <button class="FilterSelector" id="ame-cuisine" onclick='filterCategory("cuisine", "AME")'>American</button>
         <button class="FilterSelector" id="afr-cuisine" onclick='filterCategory("cuisine", "AFR")'>African</button>
+        <button class="FilterSelector" id="rus-cuisine" onclick='filterCategory("cuisine", "RUS")'>Russian</button>
         <button class="FilterSelector" id="des-cuisine" onclick='filterCategory("cuisine", "DES")'>Desserts</button>
       </details>
 
@@ -72,11 +76,16 @@
 
     <section id="recipe-list-wrapper">
 
+      <!-- I attempted to filter each recipe by using the data tags, but unfortunately it hasn't been working in my code and I cannot figure out why -->
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338`);"
-           data-author="HM"
+           data-author="HM" 
            data-veg="VEGO"
-      >
+           data-veg="GF" 
+           data-veg="NF"
+           data-time="OTH"
+           data-cuisine="ITA"
+      > <!-- I know that when I add these extra tags, none of the website is functioning. I have commented out everything except the veg and author filters to try and figure out why this is happening. -->
 
         <img class="RecipeImg" src="./images/Puttanesca.jpg" alt="bowl of puttanesca pasta" />
 
@@ -103,6 +112,10 @@
            onclick="window.open(`https://www.abc.net.au/everyday/caprese-salad-slow-roasted-tomato-rocket-basil-gremolata-recipe/10776846`);"
            data-author="HM"
            data-veg="VEGO"
+           data-veg="GF"
+           data-veg="NF"
+           data-time="OHOUR"
+           data-cuisine="ITA"
       >
 
         <img class="RecipeImg" src="./images/Caprese.jpg" alt="plate of caprese salad" />
@@ -129,6 +142,12 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.seriouseats.com/crispy-enoki-and-onion-fritter-with-thai-curry-mayo-recipe`);"
            data-author="KLA"
+           data-veg="VEGO"
+           data-veg="NF"
+           data-time="UTH"
+           data-time="OTH"
+           data-cuisine="THA"
+
       >
 
         <img class="RecipeImg" src="./images/Enoki.jpg" alt="enoki mushrooms" />
@@ -156,6 +175,9 @@
            onclick="window.open(`https://www.maangchi.com/recipe/jjinppang`);"
            data-author="M"
            data-veg="VEGO"
+           data-veg="NF"
+           data-time="OHOUR"
+           data-cuisine="KOR"
       >
 
         <img class="RecipeImg" src="./images/Red_Bean_Bun.jpg" alt="ripped open steamed bun with red bean paste" />
@@ -182,6 +204,9 @@
            onclick="window.open(`https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe`);"
            data-author="KLA"
            data-veg="VEGO"
+           data-veg="NF"
+           data-time="OHOUR"
+           data-cuisine="DES"
       >
 
         <img class="RecipeImg" src="./images/Cookies.jpg" alt="plate of chocolate chip cookies" />
@@ -206,6 +231,12 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.seriouseats.com/grilled-cheese-with-kimchi-recipe`);"
            data-author="KLA"
+           data-veg="VEGO"
+           data-veg="NF"
+           data-time="UTH"
+           data-cuisine="KOR"
+           data-cuisine="AME"
+
       >
 
         <img class="RecipeImg" src="./images/Grilled_Cheese.jpg" alt="grilled cheese sandwich with pickles" />
@@ -232,6 +263,11 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.patreon.com/posts/recipe-hands-off-60369279`);"
            data-author="CLM"
+           data-veg="NF"
+           data-veg="GF"
+           data-veg="DF"
+           data-time="OHOUR"
+           data-cuisine="AME"
       >
 
         <img class="RecipeImg" src="./images/Pork_Beans.jpg" alt="pot of pork and beans" />
@@ -257,6 +293,13 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.maangchi.com/recipe/kimchijeon`);"
            data-author="M"
+           data-veg="VEGO"
+           data-veg="VEGAN"
+           data-veg="GF"
+           data-veg="NF"
+           data-veg="DF"
+           data-time="UTH"
+           data-cuisine="KOR"
       >
 
         <img class="RecipeImg" src="./images/Kimchi_Pancake.jpg" alt="kimchi pancake with bowl of dipping sauce" />
@@ -281,6 +324,12 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.seriouseats.com/shakshuka-north-african-shirred-eggs-tomato-pepper-recipe`);"
            data-author="KLA"
+           data-veg="VEGO"
+           data-veg="NF"
+           data-veg="GF"
+           data-veg="DF"
+           data-time="OTH"
+           data-cuisine="AFR"
       >
 
         <img class="RecipeImg" src="./images/Shakshuka.jpg" alt="pan filled with shakshuka" />
@@ -305,6 +354,12 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.maangchi.com/recipe/patbingsu`);"
            data-author="M"
+           data-veg="VEGO"
+           data-veg="NF"
+           data-veg="GF"
+           data-time="OHOUR"
+           data-cuisine="DES"
+           data-cuisine="KOR"
       >
 
         <img class="RecipeImg" src="./images/Patbingsu.jpg" alt="bowl of shaved ice topped with sweet red beans and fruit" />
@@ -329,6 +384,9 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.patreon.com/posts/pasta-with-sauce-45042575`);"
            data-author="CLM"
+           data-veg="NF"
+           data-time="OTH"
+           data-cuisine="ITA"
       >
 
         <img class="RecipeImg" src="./images/Cauliflower_Spaghetti.jpg" alt="bowl of spaghettie with cauliflower sauce" />
@@ -353,6 +411,10 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.maangchi.com/recipe/yangnyeom-tongdak`);"
            data-author="M"
+           data-veg="DF"
+           data-veg="NF"
+           data-time="OTH"
+           data-cuisine="KOR"
       >
 
         <img class="RecipeImg" src="./images/Korean_Fried_Chicken.jpg" alt="plate of fried chicken with pickles and kimchi" />
@@ -379,6 +441,9 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.seriouseats.com/ultimate-beef-stroganof-recipe`);"
            data-author="KLA"
+           data-veg="NF"
+           data-time="OTH"
+           data-cuisine="RUS"
       >
 
         <img class="RecipeImg" src="./images/Stroganoff.jpg" alt="bowl of beef stroganoff pasta" />
@@ -405,6 +470,10 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.patreon.com/posts/recipe-vanilla-60100711`);"
            data-author="CLM"
+           data-veg="VEGO"
+           data-veg="NF"
+           data-time="OHOUR"
+           data-cuisine="DES"
       >
 
         <img class="RecipeImg" src="./images/Pear_Tart.jpg" alt="pear tart on a table" />
@@ -431,6 +500,12 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.abc.net.au/everyday/vegetarian-carbonara-with-mushrooms-and-miso/12426392`);"
            data-author="HM"
+           data-veg="VEGO"
+           data-veg="NF"
+           data-time="UTH"
+           data-time="OTH"
+           data-cuisine="ITA"
+
       >
 
         <img class="RecipeImg" src="./images/Mushroom_Carbonara.jpg" alt="pan filled with mushroom carbonara pasta" />
