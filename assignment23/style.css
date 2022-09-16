@@ -40,16 +40,17 @@ hr {
 
 .FilterCategoryWrapper{
   display: flex;
+  padding: 15px;
 }
 
 /* this is the filter category heading */
 summary {
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
 .FilterSelector {
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: transparent;
   color: var(--col-02);
   border: none;
@@ -75,7 +76,7 @@ summary {
   flex-wrap: wrap;
 }
 .RecipeCardWrapper{
-  height: 30rem;
+  min-height: 30rem;
   padding: 1rem;
   border: solid var(--col-02) 2px;
   flex-grow: 1;

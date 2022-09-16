@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- <script src="arrays-&-for-loops.js"></script> -->
+    <script src="arrays-&-for-loops.js"></script>
+
     <script src="filter.js"></script>
 
     <title>exercise 3</title>
@@ -27,21 +28,49 @@
 
       <details class="FilterCategoryWrapper">
         <summary>Author</summary>
-        <button class="FilterSelector" id="kla-author" onclick='filterCategory()'>J. Kenji López-Alt</button>
-        <button class="FilterSelector" id="m-author" onclick='filterCategory()'>Maangchi</button>
-        <button class="FilterSelector" id="hm-author" onclick='filterCategory()'>Hetty McKinnon</button>
-        <button class="FilterSelector" id="clm-author" onclick='filterCategory()'>Carla Lalli Music</button>
+        <button class="FilterSelector" id="kla-author" onclick='filterCategory("author", "KLA")'>J. Kenji López-Alt</button>
+        <button class="FilterSelector" id="m-author" onclick='filterCategory("author", "M")'>Maangchi</button>
+        <button class="FilterSelector" id="hm-author" onclick='filterCategory("author", "HM")'>Hetty McKinnon</button>
+        <button class="FilterSelector" id="clm-author" onclick='filterCategory("author", "CLM")'>Carla Lalli Music</button>
+      </details>
+
+      <details class="FilterCategoryWrapper">
+        <summary>Dietary Requirements</summary>
+        <button class="FilterSelector" id="vego-veg" onclick='filterCategory("veg", "VEGO")'>Vegetarian</button>
+        <button class="FilterSelector" id="vegan-veg" onclick='filterCategory("veg", "VEGAN")'>Vegan</button>
+        <button class="FilterSelector" id="gf-veg" onclick='filterCategory("veg", "GF")'>Gluten Free</button>
+        <button class="FilterSelector" id="df-veg" onclick='filterCategory("veg", "DF")'>Dairy Free</button>
+        <button class="FilterSelector" id="pf-veg" onclick='filterCategory("veg", "PF")'>Peanut Free</button>
+      </details>
+
+      <details class="FilterCategoryWrapper">
+        <summary>Time to Cook</summary>
+        <button class="FilterSelector" id="uth-time" onclick='filterCategory("time", "UTH")'>Under 30 mins</button>
+        <button class="FilterSelector" id="oth-time" onclick='filterCategory("time", "OTH")'>30 mins to 1 hour</button>
+        <button class="FilterSelector" id="ohour-time" onclick='filterCategory("time", "OHOUR")'>Over 1 hour</button>
+      </details>
+
+      <details class="FilterCategoryWrapper">
+        <summary>Cuisine</summary>
+        <button class="FilterSelector" id="ita-cuisine" onclick='filterCategory("cuisine", "ITA")'>Italian</button>
+        <button class="FilterSelector" id="tha-cuisine" onclick='filterCategory("cuisine", "THA")'>Thai</button>
+        <button class="FilterSelector" id="chi-cuisine" onclick='filterCategory("cuisine", "CHI")'>Chinese</button>
+        <button class="FilterSelector" id="kor-cuisine" onclick='filterCategory("cuisine", "KOR")'>Korean</button>
+        <button class="FilterSelector" id="ame-cuisine" onclick='filterCategory("cuisine", "AME")'>American</button>
+        <button class="FilterSelector" id="afr-cuisine" onclick='filterCategory("cuisine", "AFR")'>African</button>
+        <button class="FilterSelector" id="des-cuisine" onclick='filterCategory("cuisine", "DES")'>Desserts</button>
       </details>
 
     </div>
 
-    <hr />
+    <hr/>
 
     <section id="recipe-list-wrapper">
 
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338`);"
            data-author="HM"
+           data-veg="VEGO"
       >
 
         <img class="RecipeImg" src="./images/Puttanesca.jpg" alt="bowl of puttanesca pasta" />
@@ -58,7 +87,7 @@
         </p>
 
         <a class="RecipeTitle" href="https://www.abc.net.au/everyday/baked-puttanesca-risotto-with-tomato-olives-lemon-parsley-recipe/11270338" target="_blank">
-          Baked Puttanesca Risotto with Olives, Lemon and Parsley
+          Baked Puttanesca Risotto with Olives, Lemon and Parsley`
         </a>
 
         <p class="RecipeAuthor">by Hetty Mckinnon</p>
@@ -68,6 +97,7 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.abc.net.au/everyday/caprese-salad-slow-roasted-tomato-rocket-basil-gremolata-recipe/10776846`);"
            data-author="HM"
+           data-veg="VEGO"
       >
 
         <img class="RecipeImg" src="./images/Caprese.jpg" alt="plate of caprese salad" />
@@ -120,6 +150,7 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.maangchi.com/recipe/jjinppang`);"
            data-author="M"
+           data-veg="VEGO"
       >
 
         <img class="RecipeImg" src="./images/Red_Bean_Bun.jpg" alt="ripped open steamed bun with red bean paste" />
@@ -145,6 +176,7 @@
       <div class="RecipeCardWrapper"
            onclick="window.open(`https://www.seriouseats.com/the-food-lab-best-chocolate-chip-cookie-recipe`);"
            data-author="KLA"
+           data-veg="VEGO"
       >
 
         <img class="RecipeImg" src="./images/Cookies.jpg" alt="plate of chocolate chip cookies" />
