@@ -26,13 +26,16 @@
 
     <div id="list-filter-wrapper">     
 
+      <!-- I'm having quite a bit of trouble gettig this section to work. It seems to only be working for me in certain circumstances, ut when I chnage the ID names and add a filter function is Java, it all seems to stop working. I would love to have asked for help on this if I had given myself some time, but unfortunately I will have tp leave the code like this.-->
+
       <details class="FilterCategoryWrapper">
         <summary>Author</summary>
         <button class="FilterSelector" id="kla-author" onclick='filterCategory("author", "KLA")'>J. Kenji López-Alt</button>
         <button class="FilterSelector" id="m-author" onclick='filterCategory("author", "M")'>Maangchi</button>
         <button class="FilterSelector" id="hm-author" onclick='filterCategory("author", "HM")'>Hetty McKinnon</button>
         <button class="FilterSelector" id="clm-author" onclick='filterCategory("author", "CLM")'>Carla Lalli Music</button>
-      </details>
+      </details> 
+      <!-- FilterSelector refers to the css that has been written that sets out how the categories look on the website. -->
 
       <details class="FilterCategoryWrapper">
         <summary>Dietary Requirements</summary>
@@ -60,6 +63,8 @@
         <button class="FilterSelector" id="afr-cuisine" onclick='filterCategory("cuisine", "AFR")'>African</button>
         <button class="FilterSelector" id="des-cuisine" onclick='filterCategory("cuisine", "DES")'>Desserts</button>
       </details>
+
+      <!-- I also would have liked to create a 'show all' button in my code -->
 
     </div>
 

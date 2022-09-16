@@ -76,8 +76,8 @@ summary {
   flex-wrap: wrap;
 }
 .RecipeCardWrapper{
-  min-height: 30rem;
-  padding: 1rem;
+  min-height: 40rem;
+  padding: 2.2rem;
   border: solid var(--col-02) 2px;
   flex-grow: 1;
   display: flex;
